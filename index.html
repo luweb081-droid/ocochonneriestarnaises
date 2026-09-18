@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,8 +18,9 @@
                             wood: '#4A2E2B',
                             accent: '#8C3B29', // Rouge brique / terracotta
                             gold: '#D4AF37',
-                            cream: '#FDFBF7',
-                            light: '#F4ECE1'
+                            cream: '#F7F2EB',    // Fond global chaleureux et sableux
+                            surface: '#FFFFFF',  // Fond de carte blanc pour le contraste
+                            light: '#EFE8DC'
                         }
                     }
                 }
@@ -53,9 +53,8 @@
     }
 </style>
 
-    <!-- NAVIGATION -->
     <header class="fixed top-4 left-0 right-0 z-50 px-4">
-        <nav class="mx-auto max-w-6xl bg-white/80 backdrop-blur-xl border border-charcu-wood/10 shadow-[0_10px_40px_rgba(42,26,23,0.08)] rounded-full px-5 md:px-7 py-3 flex items-center justify-between">
+        <nav class="mx-auto max-w-6xl bg-white/85 backdrop-blur-xl border border-charcu-wood/10 shadow-[0_10px_40px_rgba(42,26,23,0.08)] rounded-full px-5 md:px-7 py-3 flex items-center justify-between">
             <a href="#accueil" class="font-serif text-lg md:text-xl font-semibold tracking-tight text-charcu-wood flex items-center gap-2">
                 Ô Cochonneries Tarnaises
             </a>
@@ -64,7 +63,7 @@
                 <a href="#accueil" class="hover:text-charcu-accent transition-colors">Accueil</a>
                 <a href="#savoir-faire" class="hover:text-charcu-accent transition-colors">Notre savoir-faire</a>
                 <a href="#produits" class="hover:text-charcu-accent transition-colors">Spécialités</a>
-                <a href="#marches" class="hover:text-charcu-accent transition-colors">Nos Marchés</a>
+                <a href="#marches" class="hover:text-charcu-accent transition-colors">Nos marchés</a>
                 <a href="#contact" class="hover:text-charcu-accent transition-colors">Contact</a>
             </div>
 
@@ -74,11 +73,9 @@
         </nav>
     </header>
 
-    <!-- CONTENU PRINCIPAL -->
-    <main class="w-full flex-grow pt-24 pb-20 flex flex-col gap-24">
+    <main class="w-full flex-grow pt-24 pb-20 flex flex-col gap-20 md:gap-24">
 
-        <!-- HERO ÉLARGI SANS BORDURE JAUNE -->
-        <section id="accueil" class="hero relative mx-2 md:mx-6 lg:mx-auto max-w-[94rem] min-h-[700px] md:min-h-[820px] lg:min-h-[860px] rounded-[2rem] overflow-hidden shadow-[0_25px_80px_rgba(42,26,23,0.16)]">
+        <section id="accueil" class="hero relative mx-2 md:mx-6 lg:mx-auto max-w-[94rem] min-h-[500px] lg:min-h-[600px] rounded-[2rem] overflow-hidden shadow-[0_25px_80px_rgba(42,26,23,0.16)]">
             <img
                 src="https://images.unsplash.com/photo-1544025162-d76694265947?q=90&w=1800&auto=format&fit=crop"
                 alt="Planche de charcuterie artisanale"
@@ -88,58 +85,51 @@
             <div class="absolute inset-0 bg-gradient-to-r from-charcu-dark/90 via-charcu-dark/70 to-charcu-dark/20"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-charcu-dark/55 via-transparent to-transparent"></div>
 
-            <div class="relative z-10 min-h-[700px] md:min-h-[820px] lg:min-h-[860px] flex items-end">
-                <!-- Cadre photo du gérant décalé vers la droite -->
-                <div class="hidden md:block absolute right-8 lg:right-16 top-1/2 -translate-y-1/2 w-[270px] lg:w-[340px] h-[400px] lg:h-[500px] rotate-[3deg] rounded-[2rem] overflow-hidden border-[10px] border-white/90 shadow-[0_25px_70px_rgba(0,0,0,.35)] bg-charcu-wood/30 z-20">
+            <div class="relative z-10 min-h-[500px] lg:min-h-[600px] flex items-center">
+                <!-- Cadre photo du gérant décalé à droite et réduit en taille -->
+                <div class="hidden md:block absolute right-12 lg:right-24 top-1/2 -translate-y-1/2 w-[300px] lg:w-[380px] h-[420px] lg:h-[520px] rotate-[3deg] rounded-[1.5rem] overflow-hidden border-[8px] border-white/90 shadow-[0_25px_70px_rgba(0,0,0,.35)] bg-charcu-wood/30 z-20">
                     <img
                         src="static/images/chef2.png"
                         alt="Le gérant de la maison"
                         class="w-full h-full object-cover"
                     >
-                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcu-dark/80 to-transparent p-5 pt-16">
-                        <p class="text-white font-serif text-xl">Notre maison</p>
-                        <p class="text-white/65 text-xs mt-1">Un savoir-faire transmis avec passion</p>
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcu-dark/80 to-transparent p-4 pt-12">
+                        <p class="text-white font-serif text-lg">SEBASTIEN</p>
+                        <p class="text-white/65 text-[10px] mt-0.5">Dit -Le Boss</p>
                     </div>
                 </div>
 
-                <!-- Texte du hero avec padding-right large -->
-                <div class="w-full max-w-4xl lg:max-w-6xl px-7 py-12 md:px-14 md:py-16 lg:px-20 lg:py-20 lg:pr-[480px] text-white">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="h-px w-10 bg-charcu-gold"></span>
+                <!-- Texte du hero ajusté pour la nouvelle hauteur -->
+                <div class="w-full max-w-4xl lg:max-w-6xl px-7 py-10 md:px-14 lg:px-20 lg:pr-[420px] text-white">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="h-px w-8 bg-charcu-gold"></span>
                         <span class="text-charcu-gold text-xs md:text-sm font-bold uppercase tracking-[0.22em]">
                             Artisan charcutier depuis 1984
                         </span>
                     </div>
 
-                    <h1 class="hero-title max-w-3xl font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5.4rem] font-semibold leading-[0.98] tracking-[-0.035em]">
+                    <h1 class="hero-title max-w-3xl font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-semibold leading-[1.05] tracking-[-0.02em]">
                         Le goût du vrai.<br>
                         <span class="text-charcu-gold">Le savoir-faire</span> en héritage.
                     </h1>
 
-                    <p class="mt-7 max-w-2xl text-white/80 text-base md:text-lg leading-relaxed">
+                    <p class="mt-5 max-w-xl text-white/80 text-sm md:text-base leading-relaxed">
                         Jambons affinés, terrines maison et spécialités du Tarn :
                         des produits généreux, préparés avec passion et dans le respect de la tradition.
                     </p>
 
-                    <div class="mt-9 flex flex-wrap items-center gap-4">
-                        <a href="#produits" class="bg-charcu-accent hover:bg-white hover:text-charcu-dark text-white font-semibold px-6 py-3.5 rounded-full transition-all shadow-lg">
+                    <div class="mt-7 flex flex-wrap items-center gap-4">
+                        <a href="#produits" class="bg-charcu-accent hover:bg-white hover:text-charcu-dark text-white text-sm font-semibold px-6 py-3 rounded-full transition-all shadow-lg">
                             Découvrir nos spécialités
                         </a>
-                        <a href="#marches" class="border border-white/35 hover:bg-white/10 text-white font-semibold px-6 py-3.5 rounded-full transition-all backdrop-blur-sm">
-                            Où nous trouver ?
+                        <a href="#marches" class="border border-white/35 hover:bg-white/10 text-white text-sm font-semibold px-6 py-3 rounded-full transition-all backdrop-blur-sm">
+                            Nos marchés
                         </a>
-                    </div>
-
-                    <div class="mt-10 flex flex-wrap gap-x-7 gap-y-2 text-xs md:text-sm text-white/65">
-                        <span>✦ Fabrication artisanale</span>
-                        <span>✦ Produits sélectionnés</span>
-                        <span>✦ Présents sur les marchés</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- INTRODUCTION / SAVOIR-FAIRE -->
         <section id="savoir-faire" class="px-5 md:px-10 lg:px-16">
             <div class="max-w-7xl mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-14 lg:gap-24 items-center">
                 <div class="max-w-xl">
@@ -156,7 +146,7 @@
                     </a>
                 </div>
 
-                <div class="relative h-[440px] md:h-[520px]">
+                <div class="relative h-[400px] md:h-[480px]">
                     <div class="absolute right-0 top-4 w-[68%] h-[78%] rotate-3 rounded-3xl overflow-hidden shadow-2xl border-[8px] border-white">
                         <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=85&w=1000&auto=format&fit=crop"
                              alt="Préparation artisanale en cuisine"
@@ -175,25 +165,23 @@
             </div>
         </section>
 
-        <!-- BANDEAU PHOTO / DÉFILEMENT -->
         <section class="overflow-hidden py-4">
             <div class="flex gap-5 w-max animate-[marquee_28s_linear_infinite]">
-                <div class="w-[280px] md:w-[360px] h-48 md:h-60 rounded-3xl overflow-hidden rotate-[-2deg] shrink-0">
+                <div class="w-[280px] md:w-[360px] h-48 md:h-60 rounded-3xl overflow-hidden rotate-[-2deg] shrink-0 shadow-md">
                     <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=85&w=900&auto=format&fit=crop" alt="Pain artisanal" class="w-full h-full object-cover">
                 </div>
-                <div class="w-[280px] md:w-[360px] h-48 md:h-60 rounded-3xl overflow-hidden rotate-[2deg] shrink-0">
+                <div class="w-[280px] md:w-[360px] h-48 md:h-60 rounded-3xl overflow-hidden rotate-[2deg] shrink-0 shadow-md">
                     <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=85&w=900&auto=format&fit=crop" alt="Préparation culinaire" class="w-full h-full object-cover">
                 </div>
-                <div class="w-[280px] md:w-[360px] h-48 md:h-60 rounded-3xl overflow-hidden rotate-[-1deg] shrink-0">
+                <div class="w-[280px] md:w-[360px] h-48 md:h-60 rounded-3xl overflow-hidden rotate-[-1deg] shrink-0 shadow-md">
                     <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=85&w=900&auto=format&fit=crop" alt="Cuisine artisanale" class="w-full h-full object-cover">
                 </div>
-                <div class="w-[280px] md:w-[360px] h-48 md:h-60 rounded-3xl overflow-hidden rotate-[3deg] shrink-0">
+                <div class="w-[280px] md:w-[360px] h-48 md:h-60 rounded-3xl overflow-hidden rotate-[3deg] shrink-0 shadow-md">
                     <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=85&w=900&auto=format&fit=crop" alt="Planche de charcuterie" class="w-full h-full object-cover">
                 </div>
             </div>
         </section>
 
-        <!-- SPÉCIALITÉS -->
         <section id="produits" class="px-5 md:px-10 lg:px-16 space-y-10">
             <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-5">
                 <div>
@@ -206,7 +194,8 @@
             </div>
 
             <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group bg-white border border-charcu-wood/10 rounded-3xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-500">
+                <!-- Carte Spécialité 1 -->
+                <div class="group bg-charcu-surface border border-charcu-wood/5 rounded-3xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-500">
                     <div class="h-64 rounded-2xl overflow-hidden bg-charcu-light mb-5">
                         <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=85&w=900&auto=format&fit=crop" alt="Jambon et charcuterie" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
@@ -219,7 +208,8 @@
                     </div>
                 </div>
 
-                <div class="group bg-white border border-charcu-wood/10 rounded-3xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-500">
+                <!-- Carte Spécialité 2 -->
+                <div class="group bg-charcu-surface border border-charcu-wood/5 rounded-3xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-500">
                     <div class="h-64 rounded-2xl overflow-hidden bg-charcu-light mb-5">
                         <img src="https://images.unsplash.com/photo-1547592180-85f173990554?q=85&w=900&auto=format&fit=crop" alt="Préparation artisanale" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
@@ -232,7 +222,8 @@
                     </div>
                 </div>
 
-                <div class="group bg-white border border-charcu-wood/10 rounded-3xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-500">
+                <!-- Carte Spécialité 3 -->
+                <div class="group bg-charcu-surface border border-charcu-wood/5 rounded-3xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-500">
                     <div class="h-64 rounded-2xl overflow-hidden bg-charcu-light mb-5">
                         <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=85&w=900&auto=format&fit=crop" alt="Charcuterie artisanale" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
@@ -247,7 +238,6 @@
             </div>
         </section>
 
-        <!-- OÙ NOUS TROUVER ? / MARCHÉS -->
         <section id="marches" class="px-5 md:px-10 lg:px-16 space-y-10">
             <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-5">
                 <div>
@@ -260,75 +250,80 @@
             </div>
 
             <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Marché 1 -->
-                <div class="bg-white border border-charcu-wood/10 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+                <!-- Marché 1 : Gaillac -->
+                <div class="bg-charcu-surface border border-charcu-wood/5 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="bg-charcu-light text-charcu-wood text-xs font-bold px-3 py-1.5 rounded-full uppercase">Mercredi matin</span>
+                            <span class="bg-charcu-cream border border-charcu-wood/10 text-charcu-wood text-xs font-bold px-3 py-1.5 rounded-full uppercase">Mercredi matin</span>
                             <span class="text-charcu-accent text-sm font-semibold">📍 Tarn</span>
                         </div>
                         <h3 class="font-serif text-2xl font-semibold text-charcu-wood">Marché de Gaillac</h3>
                         <p class="text-sm text-charcu-dark/65 mt-2 leading-relaxed">Place de la Libération. Retrouvez notre étal face aux producteurs de vin local.</p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-charcu-wood/5 flex flex-col gap-4">
-                        <a href="https://maps.google.com/?q=Place+de+la+Liberation+Gaillac" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-charcu-light hover:bg-charcu-wood hover:text-white text-charcu-wood font-medium text-xs py-2.5 px-4 rounded-xl transition-all">
-                            <svg class="w-4 h-4 fill-current text-charcu-accent" viewBox="0 0 24 24"><path d="M12 0C7.802 0 4 3.403 4 7.602C4 11.8 7.469 16.812 12 24C16.531 16.812 20 11.8 20 7.602C20 3.403 16.198 0 12 0ZM12 11C10.343 11 9 9.657 9 8C9 6.343 10.343 5 12 5C13.657 5 15 6.343 15 8C15 9.657 13.657 11 12 11Z"/></svg>
+                        <div class="text-xs text-charcu-wood/80 flex items-center justify-between">
+                            <span>🕒 7h30 - 13h00</span>
+                            <span class="font-semibold">Stand n°14</span>
+                        </div>
+                        <a href="https://maps.google.com/?q=Place+de+la+Liberation+Gaillac" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-charcu-light hover:bg-charcu-wood hover:text-white text-charcu-wood font-medium text-sm py-3 px-4 rounded-xl transition-all shadow-sm">
+                            <svg class="w-4 h-4 fill-current text-charcu-accent group-hover:text-white" viewBox="0 0 24 24">
+                                <path d="M12 0C7.58 0 4 3.58 4 8c0 5.25 7.14 15.35 7.55 15.93.23.32.7.32.93 0C12.86 23.35 20 13.25 20 8c0-4.42-3.58-8-8-8zm0 11.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 4.5 12 4.5 15.5 6.07 15.5 8 13.93 11.5 12 11.5z"/>
+                            </svg>
                             <span>Voir sur Google Maps</span>
                         </a>
-                        <div class="text-xs text-charcu-wood/60 flex items-center justify-between">
-                            <span>Horaires : 7h30 - 13h00</span>
-                            <span class="font-semibold text-charcu-wood">Stand n°14</span>
-                        </div>
                     </div>
                 </div>
 
-                <!-- Marché 2 -->
-                <div class="bg-white border border-charcu-wood/10 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+                <!-- Marché 2 : Albi -->
+                <div class="bg-charcu-surface border border-charcu-wood/5 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="bg-charcu-light text-charcu-wood text-xs font-bold px-3 py-1.5 rounded-full uppercase">Samedi matin</span>
+                            <span class="bg-charcu-cream border border-charcu-wood/10 text-charcu-wood text-xs font-bold px-3 py-1.5 rounded-full uppercase">Samedi matin</span>
                             <span class="text-charcu-accent text-sm font-semibold">📍 Tarn</span>
                         </div>
                         <h3 class="font-serif text-2xl font-semibold text-charcu-wood">Marché d'Albi</h3>
                         <p class="text-sm text-charcu-dark/65 mt-2 leading-relaxed">Place du Vigan et Halles couverte. Le rendez-vous incontournable des gourmands tarnais.</p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-charcu-wood/5 flex flex-col gap-4">
-                        <a href="https://maps.google.com/?q=Place+du+Vigan+Albi" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-charcu-light hover:bg-charcu-wood hover:text-white text-charcu-wood font-medium text-xs py-2.5 px-4 rounded-xl transition-all">
-                            <svg class="w-4 h-4 fill-current text-charcu-accent" viewBox="0 0 24 24"><path d="M12 0C7.802 0 4 3.403 4 7.602C4 11.8 7.469 16.812 12 24C16.531 16.812 20 11.8 20 7.602C20 3.403 16.198 0 12 0ZM12 11C10.343 11 9 9.657 9 8C9 6.343 10.343 5 12 5C13.657 5 15 6.343 15 8C15 9.657 13.657 11 12 11Z"/></svg>
+                        <div class="text-xs text-charcu-wood/80 flex items-center justify-between">
+                            <span>🕒 8h00 - 13h30</span>
+                            <span class="font-semibold">Grande Allée</span>
+                        </div>
+                        <a href="https://maps.google.com/?q=Place+du+Vigan+Albi" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-charcu-light hover:bg-charcu-wood hover:text-white text-charcu-wood font-medium text-sm py-3 px-4 rounded-xl transition-all shadow-sm">
+                            <svg class="w-4 h-4 fill-current text-charcu-accent group-hover:text-white" viewBox="0 0 24 24">
+                                <path d="M12 0C7.58 0 4 3.58 4 8c0 5.25 7.14 15.35 7.55 15.93.23.32.7.32.93 0C12.86 23.35 20 13.25 20 8c0-4.42-3.58-8-8-8zm0 11.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 4.5 12 4.5 15.5 6.07 15.5 8 13.93 11.5 12 11.5z"/>
+                            </svg>
                             <span>Voir sur Google Maps</span>
                         </a>
-                        <div class="text-xs text-charcu-wood/60 flex items-center justify-between">
-                            <span>Horaires : 8h00 - 13h30</span>
-                            <span class="font-semibold text-charcu-wood">Grande Allée</span>
-                        </div>
                     </div>
                 </div>
 
-                <!-- Marché 3 -->
-                <div class="bg-white border border-charcu-wood/10 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+                <!-- Marché 3 : Castres -->
+                <div class="bg-charcu-surface border border-charcu-wood/5 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="bg-charcu-light text-charcu-wood text-xs font-bold px-3 py-1.5 rounded-full uppercase">Dimanche matin</span>
+                            <span class="bg-charcu-cream border border-charcu-wood/10 text-charcu-wood text-xs font-bold px-3 py-1.5 rounded-full uppercase">Dimanche matin</span>
                             <span class="text-charcu-accent text-sm font-semibold">📍 Tarn</span>
                         </div>
                         <h3 class="font-serif text-2xl font-semibold text-charcu-wood">Marché de Castres</h3>
                         <p class="text-sm text-charcu-dark/65 mt-2 leading-relaxed">Place Jean Jaurès. Venez composer votre plateau apéritif dominical ensoleillé.</p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-charcu-wood/5 flex flex-col gap-4">
-                        <a href="https://maps.google.com/?q=Place+Jean+Jaures+Castres" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-charcu-light hover:bg-charcu-wood hover:text-white text-charcu-wood font-medium text-xs py-2.5 px-4 rounded-xl transition-all">
-                            <svg class="w-4 h-4 fill-current text-charcu-accent" viewBox="0 0 24 24"><path d="M12 0C7.802 0 4 3.403 4 7.602C4 11.8 7.469 16.812 12 24C16.531 16.812 20 11.8 20 7.602C20 3.403 16.198 0 12 0ZM12 11C10.343 11 9 9.657 9 8C9 6.343 10.343 5 12 5C13.657 5 15 6.343 15 8C15 9.657 13.657 11 12 11Z"/></svg>
+                        <div class="text-xs text-charcu-wood/80 flex items-center justify-between">
+                            <span>🕒 8h00 - 13h00</span>
+                            <span class="font-semibold">Côté fontaine</span>
+                        </div>
+                        <a href="https://maps.google.com/?q=Place+Jean+Jaures+Castres" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-charcu-light hover:bg-charcu-wood hover:text-white text-charcu-wood font-medium text-sm py-3 px-4 rounded-xl transition-all shadow-sm">
+                            <svg class="w-4 h-4 fill-current text-charcu-accent group-hover:text-white" viewBox="0 0 24 24">
+                                <path d="M12 0C7.58 0 4 3.58 4 8c0 5.25 7.14 15.35 7.55 15.93.23.32.7.32.93 0C12.86 23.35 20 13.25 20 8c0-4.42-3.58-8-8-8zm0 11.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 4.5 12 4.5 15.5 6.07 15.5 8 13.93 11.5 12 11.5z"/>
+                            </svg>
                             <span>Voir sur Google Maps</span>
                         </a>
-                        <div class="text-xs text-charcu-wood/60 flex items-center justify-between">
-                            <span>Horaires : 8h00 - 13h00</span>
-                            <span class="font-semibold text-charcu-wood">Côté fontaine</span>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION CONTACT / HORAIRES -->
         <section id="contact" class="mx-4 md:mx-8 lg:mx-auto max-w-7xl bg-charcu-wood text-charcu-cream rounded-3xl p-8 md:p-12 shadow-sm flex flex-col md:flex-row justify-between gap-8 items-center">
             <div class="space-y-4 max-w-lg">
                 <h2 class="font-serif text-3xl font-bold">Venez nous rendre visite</h2>
@@ -350,7 +345,6 @@
 
     </main>
 
-    <!-- FOOTER -->
     <footer class="border-t border-charcu-wood/10 py-8 mt-4 text-center text-xs text-charcu-wood/60">
         <p>© 2026 Ô Cochonneries Tarnaises - Charcuterie Artisanale. Tous droits réservés.</p>
     </footer>
