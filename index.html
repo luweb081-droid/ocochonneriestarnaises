@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maison Goumand - Charcuterie Artisanale & Traiteur</title>
-    <!-- Tailwind CSS CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -25,119 +28,226 @@
         }
     </script>
 </head>
-<body class="bg-charcu-cream text-charcu-dark font-sans antialiased min-h-full flex flex-col selection:bg-charcu-accent selection:text-white">
+<body class="bg-charcu-cream text-charcu-dark antialiased min-h-full flex flex-col selection:bg-charcu-accent selection:text-white">
+<style>
+    html { scroll-behavior: smooth; }
+    body { font-family: "DM Sans", sans-serif; }
+    .font-serif { font-family: "Playfair Display", serif; }
+    .hero-title { text-wrap: balance; }
+    .hero-image { transform: scale(1.02); transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+    .hero:hover .hero-image { transform: scale(1.06); }
+@keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-25%); }
+    }
+    .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .hero-image, .group, .reveal { transition: none !important; }
+        .animate-\[marquee_28s_linear_infinite\] { animation: none !important; }
+    }
+</style>
 
-    <!-- BARRE DE NAVIGATION BLUR (Flottante avec espace en haut) -->
-    <header class="fixed top-3 left-0 right-0 z-50 flex justify-center px-4">
-        <nav class="w-full max-w-5xl bg-charcu-cream/80 backdrop-blur-md border border-charcu-wood/10 shadow-lg rounded-full px-6 py-3 flex items-center justify-between transition-all">
-            <!-- Logo / Nom de la Charcuterie -->
-            <a href="#" class="font-serif text-xl font-bold tracking-wider text-charcu-wood flex items-center gap-2">
-                <span class="text-charcu-accent">✦</span> Ô Cochonneries Tarnaises
+    <!-- NAVIGATION -->
+    <header class="fixed top-4 left-0 right-0 z-50 px-4">
+        <nav class="mx-auto max-w-6xl bg-white/80 backdrop-blur-xl border border-charcu-wood/10 shadow-[0_10px_40px_rgba(42,26,23,0.08)] rounded-full px-5 md:px-7 py-3 flex items-center justify-between">
+            <a href="#accueil" class="font-serif text-lg md:text-xl font-semibold tracking-tight text-charcu-wood flex items-center gap-2">
+                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-charcu-accent text-white text-xs">✦</span>
+                Ô Cochonneries Tarnaises
             </a>
 
-            <!-- Liens de navigation -->
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-charcu-wood/80">
+            <div class="hidden md:flex items-center gap-7 text-sm font-medium text-charcu-wood/70">
                 <a href="#accueil" class="hover:text-charcu-accent transition-colors">Accueil</a>
-                <a href="#savoir-faire" class="hover:text-charcu-accent transition-colors">Notre Savoir-Faire</a>
+                <a href="#savoir-faire" class="hover:text-charcu-accent transition-colors">Notre savoir-faire</a>
                 <a href="#produits" class="hover:text-charcu-accent transition-colors">Spécialités</a>
-                <a href="#contact" class="hover:text-charcu-accent transition-colors">Contact & Horaires</a>
+                <a href="#contact" class="hover:text-charcu-accent transition-colors">Contact</a>
             </div>
 
-            <!-- Bouton d'action rapide -->
-            <a href="#contact" class="bg-charcu-accent hover:bg-charcu-wood text-white text-xs md:text-sm font-semibold px-4 py-2 rounded-full transition-colors shadow-sm">
-                Commander / Panier
+            <a href="#contact" class="bg-charcu-wood hover:bg-charcu-accent text-white text-xs md:text-sm font-semibold px-4 md:px-5 py-2.5 rounded-full transition-all shadow-sm">
+                Commander
             </a>
         </nav>
     </header>
 
     <!-- CONTENU PRINCIPAL (Centré, prenant 3/4 de la largeur de l'écran) -->
-    <main class="w-3/4 mx-auto flex-grow pt-28 pb-16 flex flex-col gap-16">
+    <main class="w-full flex-grow pt-24 pb-20 flex flex-col gap-24">
 
-        <!-- SECTION HERO -->
-        <section id="accueil" class="bg-charcu-light border border-charcu-wood/10 rounded-3xl p-8 md:p-14 shadow-sm flex flex-col md:flex-row items-center gap-10">
-            <div class="flex-1 space-y-6">
-                <span class="inline-block bg-charcu-accent/10 text-charcu-accent text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
-                    Artisan Charcutier depuis 1984
-                </span>
-                <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-charcu-wood font-bold leading-tight">
-                    L'authenticité <br>du <span class="text-charcu-accent">fait-maison</span>.
-                </h1>
-                <p class="text-charcu-dark/80 text-base md:text-lg leading-relaxed">
-                    Découvrez nos jambons affinés, nos terrines traditionnelles et nos viandes sélectionnées avec passion au cœur de notre terroir. Le goût du vrai, préparé dans le respect de la tradition.
-                </p>
-                <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="#produits" class="bg-charcu-wood hover:bg-charcu-accent text-white font-medium px-6 py-3 rounded-full transition-colors shadow">
-                        Découvrir nos produits
-                    </a>
-                    <a href="#savoir-faire" class="border border-charcu-wood/30 hover:border-charcu-wood text-charcu-wood font-medium px-6 py-3 rounded-full transition-colors">
-                        Notre histoire
-                    </a>
+        <!-- HERO -->
+        <section id="accueil" class="hero relative mx-4 md:mx-8 lg:mx-auto max-w-7xl min-h-[700px] md:min-h-[820px] lg:min-h-[860px] rounded-[2rem] overflow-hidden shadow-[0_25px_80px_rgba(42,26,23,0.16)]">
+            <img
+                src="https://images.unsplash.com/photo-1544025162-d76694265947?q=90&w=1800&auto=format&fit=crop"
+                alt="Planche de charcuterie artisanale"
+                class="hero-image absolute inset-0 w-full h-full object-cover"
+            >
+
+            <div class="absolute inset-0 bg-gradient-to-r from-charcu-dark/90 via-charcu-dark/65 to-charcu-dark/10"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-charcu-dark/55 via-transparent to-transparent"></div>
+
+            <div class="relative z-10 min-h-[700px] md:min-h-[820px] lg:min-h-[860px] flex items-end">
+                <!-- Cadre prévu pour la photo du gérant -->
+                <div class="hidden md:block absolute right-10 lg:right-16 top-1/2 -translate-y-1/2 w-[260px] lg:w-[330px] h-[390px] lg:h-[490px] rotate-[4deg] rounded-[2rem] overflow-hidden border-[10px] border-white/90 shadow-[0_25px_70px_rgba(0,0,0,.35)] bg-charcu-wood/30">
+                    <img
+                        src="PHOTO-GERANT.jpg"
+                        alt="Le gérant de la maison"
+                        class="w-full h-full object-cover"
+                    >
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcu-dark/80 to-transparent p-5 pt-16">
+                        <p class="text-white font-serif text-xl">Notre maison</p>
+                        <p class="text-white/65 text-xs mt-1">Un savoir-faire transmis avec passion</p>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Visuel Photo HTML intégrant une vraie image de planche de charcuterie -->
-            <div class="flex-1 w-full">
-                <div class="w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-md relative group border border-charcu-wood/20">
-                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000&auto=format&fit=crop" 
-                         alt="Planche de charcuterie artisanale" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-charcu-dark/40 via-transparent to-transparent pointer-events-none"></div>
+
+                <div class="w-full max-w-3xl lg:max-w-4xl px-7 py-12 md:px-14 md:py-16 lg:px-20 lg:py-20 text-white">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="h-px w-10 bg-charcu-gold"></span>
+                        <span class="text-charcu-gold text-xs md:text-sm font-bold uppercase tracking-[0.22em]">
+                            Artisan charcutier depuis 1984
+                        </span>
+                    </div>
+
+                    <h1 class="hero-title max-w-3xl font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5.4rem] font-semibold leading-[0.98] tracking-[-0.035em]">
+                        Le goût du vrai.<br>
+                        <span class="text-charcu-gold">Le savoir-faire</span> en héritage.
+                    </h1>
+
+                    <p class="mt-7 max-w-2xl text-white/80 text-base md:text-lg leading-relaxed">
+                        Jambons affinés, terrines maison et spécialités du Tarn :
+                        des produits généreux, préparés avec passion et dans le respect de la tradition.
+                    </p>
+
+                    <div class="mt-9 flex flex-wrap items-center gap-4">
+                        <a href="#produits" class="bg-charcu-accent hover:bg-white hover:text-charcu-dark text-white font-semibold px-6 py-3.5 rounded-full transition-all shadow-lg">
+                            Découvrir nos spécialités
+                        </a>
+                        <a href="#contact" class="border border-white/35 hover:bg-white/10 text-white font-semibold px-6 py-3.5 rounded-full transition-all backdrop-blur-sm">
+                            Nous rendre visite
+                        </a>
+                    </div>
+
+                    <div class="mt-10 flex flex-wrap gap-x-7 gap-y-2 text-xs md:text-sm text-white/65">
+                        <span>✦ Fabrication artisanale</span>
+                        <span>✦ Produits sélectionnés</span>
+                        <span>✦ Préparé sur place</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION SPÉCIALITÉS -->
-        <section id="produits" class="space-y-8">
-            <div class="text-center space-y-2">
-                <h2 class="font-serif text-3xl font-bold text-charcu-wood">Nos Incontournables</h2>
-                <p class="text-charcu-dark/70 text-sm md:text-base">Élaborés chaque semaine dans notre laboratoire avec des viandes rigoureusement sélectionnées.</p>
+        <!-- INTRODUCTION / SAVOIR-FAIRE -->
+        <section id="savoir-faire" class="px-5 md:px-10 lg:px-16">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-14 lg:gap-24 items-center">
+                <div class="max-w-xl">
+                    <span class="text-charcu-accent text-xs font-bold uppercase tracking-[0.2em]">Maison & tradition</span>
+                    <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-charcu-wood mt-4 leading-[1.05]">
+                        Une maison où le geste compte autant que le goût.
+                    </h2>
+                    <p class="mt-6 text-charcu-dark/65 leading-relaxed text-base md:text-lg">
+                        Des recettes préparées avec patience, des produits choisis avec attention
+                        et un savoir-faire qui se transmet au fil des années.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center gap-2 mt-8 text-charcu-wood font-semibold border-b border-charcu-accent pb-1 hover:text-charcu-accent transition-colors">
+                        Découvrir notre savoir-faire <span>↗</span>
+                    </a>
+                </div>
+
+                <div class="relative h-[440px] md:h-[520px]">
+                    <div class="absolute right-0 top-4 w-[68%] h-[78%] rotate-3 rounded-3xl overflow-hidden shadow-2xl border-[8px] border-white">
+                        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=85&w=1000&auto=format&fit=crop"
+                             alt="Préparation artisanale en cuisine"
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute left-0 bottom-2 w-[48%] h-[58%] -rotate-6 rounded-3xl overflow-hidden shadow-2xl border-[8px] border-white">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?q=85&w=800&auto=format&fit=crop"
+                             alt="Produits frais préparés artisanalement"
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute left-[43%] bottom-0 bg-charcu-wood text-white rounded-2xl px-5 py-4 shadow-xl -rotate-2">
+                        <p class="font-serif text-xl">Fait avec passion</p>
+                        <p class="text-xs text-white/60 mt-1">Dans notre atelier</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BANDEAU PHOTO / DÉFILEMENT -->
+        <section class="overflow-hidden py-4">
+            <div class="flex gap-5 w-max animate-[marquee_28s_linear_infinite]">
+                <div class="w-[280px] md:w-[360px] h-48 md:h-60 rounded-3xl overflow-hidden rotate-[-2deg] shrink-0">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=85&w=900&auto=format&fit=crop" alt="Pain artisanal" class="w-full h-full object-cover">
+                </div>
+                <div class="w-[280px] md:w-[360px] h-48 md:h-60 rounded-3xl overflow-hidden rotate-[2deg] shrink-0">
+                    <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=85&w=900&auto=format&fit=crop" alt="Préparation culinaire" class="w-full h-full object-cover">
+                </div>
+                <div class="w-[280px] md:w-[360px] h-48 md:h-60 rounded-3xl overflow-hidden rotate-[-1deg] shrink-0">
+                    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=85&w=900&auto=format&fit=crop" alt="Cuisine artisanale" class="w-full h-full object-cover">
+                </div>
+                <div class="w-[280px] md:w-[360px] h-48 md:h-60 rounded-3xl overflow-hidden rotate-[3deg] shrink-0">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=85&w=900&auto=format&fit=crop" alt="Planche de charcuterie" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- SPÉCIALITÉS -->
+        <section id="produits" class="px-5 md:px-10 lg:px-16 space-y-10">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+                <div>
+                    <span class="text-charcu-accent text-xs font-bold uppercase tracking-[0.2em]">À découvrir</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-semibold text-charcu-wood mt-2">Nos incontournables</h2>
+                </div>
+                <p class="max-w-md text-charcu-dark/60 leading-relaxed">
+                    Des spécialités généreuses, élaborées chaque semaine dans notre atelier.
+                </p>
             </div>
 
-            <!-- Grille de produits -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Carte 1 -->
-                <div class="bg-white border border-charcu-wood/10 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                    <div>
-                        <div class="h-40 bg-charcu-light rounded-xl mb-4 flex items-center justify-center text-3xl">🥓</div>
-                        <h3 class="font-serif text-xl font-bold text-charcu-wood mb-2">Le Jambon Blanc Truffé</h3>
-                        <p class="text-sm text-charcu-dark/70">Cuit lentement au bouillon, brisures de truffe noire d'été. Doux et fondant en bouche.</p>
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group bg-white border border-charcu-wood/10 rounded-3xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-500">
+                    <div class="h-64 rounded-2xl overflow-hidden bg-charcu-light mb-5">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=85&w=900&auto=format&fit=crop" alt="Jambon et charcuterie" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                    <div class="mt-6 pt-4 border-t border-charcu-light flex items-center justify-between">
-                        <span class="font-bold text-charcu-accent">34,00 € / kg</span>
-                        <span class="text-xs uppercase font-semibold bg-charcu-light px-2.5 py-1 rounded-md text-charcu-wood">Artisanal</span>
-                    </div>
-                </div>
-
-                <!-- Carte 2 -->
-                <div class="bg-white border border-charcu-wood/10 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                    <div>
-                        <div class="h-40 bg-charcu-light rounded-xl mb-4 flex items-center justify-center text-3xl">🏺</div>
-                        <h3 class="font-serif text-xl font-bold text-charcu-wood mb-2">Pâté en Croute Tradition</h3>
-                        <p class="text-sm text-charcu-dark/70">Pâte pur beurre croustillante, farce de porc fermier, foie de volaille et pistaches.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-charcu-light flex items-center justify-between">
-                        <span class="font-bold text-charcu-accent">28,50 € / kg</span>
-                        <span class="text-xs uppercase font-semibold bg-charcu-light px-2.5 py-1 rounded-md text-charcu-wood">Fait Maison</span>
+                    <div class="px-1">
+                        <div class="flex items-start justify-between gap-3">
+                            <h3 class="font-serif text-2xl font-semibold text-charcu-wood">Le Jambon Blanc Truffé</h3>
+                            <span class="text-charcu-accent font-bold whitespace-nowrap">34 € / kg</span>
+                        </div>
+                        <p class="text-sm text-charcu-dark/65 mt-3 leading-relaxed">Cuit lentement au bouillon, avec brisures de truffe noire d'été. Doux et fondant.</p>
                     </div>
                 </div>
 
-                <!-- Carte 3 -->
-                <div class="bg-white border border-charcu-wood/10 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                    <div>
-                        <div class="h-40 bg-charcu-light rounded-xl mb-4 flex items-center justify-center text-3xl">🌿</div>
-                        <h3 class="font-serif text-xl font-bold text-charcu-wood mb-2">Saucisson Sec de Lacaune</h3>
-                        <p class="text-sm text-charcu-dark/70">Affiné 8 semaines en séchoir naturel, gros grain, pointe d'ail et poivre noir concassé.</p>
+                <div class="group bg-white border border-charcu-wood/10 rounded-3xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-500">
+                    <div class="h-64 rounded-2xl overflow-hidden bg-charcu-light mb-5">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?q=85&w=900&auto=format&fit=crop" alt="Préparation artisanale" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                    <div class="mt-6 pt-4 border-t border-charcu-light flex items-center justify-between">
-                        <span class="font-bold text-charcu-accent">6,80 € la pièce</span>
-                        <span class="text-xs uppercase font-semibold bg-charcu-light px-2.5 py-1 rounded-md text-charcu-wood">Affiné</span>
+                    <div class="px-1">
+                        <div class="flex items-start justify-between gap-3">
+                            <h3 class="font-serif text-2xl font-semibold text-charcu-wood">Pâté en Croûte Tradition</h3>
+                            <span class="text-charcu-accent font-bold whitespace-nowrap">28,50 € / kg</span>
+                        </div>
+                        <p class="text-sm text-charcu-dark/65 mt-3 leading-relaxed">Pâte pur beurre croustillante, farce de porc fermier, foie de volaille et pistaches.</p>
+                    </div>
+                </div>
+
+                <div class="group bg-white border border-charcu-wood/10 rounded-3xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-500">
+                    <div class="h-64 rounded-2xl overflow-hidden bg-charcu-light mb-5">
+                        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=85&w=900&auto=format&fit=crop" alt="Charcuterie artisanale" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="px-1">
+                        <div class="flex items-start justify-between gap-3">
+                            <h3 class="font-serif text-2xl font-semibold text-charcu-wood">Saucisson Sec de Lacaune</h3>
+                            <span class="text-charcu-accent font-bold whitespace-nowrap">6,80 €</span>
+                        </div>
+                        <p class="text-sm text-charcu-dark/65 mt-3 leading-relaxed">Affiné 8 semaines en séchoir naturel, gros grain, ail et poivre noir concassé.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- SECTION CONTACT / HORAIRES -->
-        <section id="contact" class="bg-charcu-wood text-charcu-cream rounded-3xl p-8 md:p-12 shadow-sm flex flex-col md:flex-row justify-between gap-8 items-center">
+        <section id="contact" class="mx-4 md:mx-8 lg:mx-auto max-w-7xl bg-charcu-wood text-charcu-cream rounded-3xl p-8 md:p-12 shadow-sm flex flex-col md:flex-row justify-between gap-8 items-center">
             <div class="space-y-4 max-w-lg">
                 <h2 class="font-serif text-3xl font-bold">Venez nous rendre visite</h2>
                 <p class="text-charcu-light/80 text-sm md:text-base">
@@ -159,9 +269,24 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-charcu-wood/10 py-6 text-center text-xs text-charcu-wood/60">
+    <footer class="border-t border-charcu-wood/10 py-8 mt-4 text-center text-xs text-charcu-wood/60">
         <p>© 2026 Maison Goumand - Charcuterie Artisanale. Tous droits réservés.</p>
     </footer>
 
+<script>
+    const revealItems = document.querySelectorAll("#savoir-faire, #produits, #contact");
+    revealItems.forEach(el => el.classList.add("reveal"));
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
