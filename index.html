@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Goumand - Charcuterie Artisanale & Traiteur</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        charcu: {
+                            dark: '#2A1A17',
+                            wood: '#4A2E2B',
+                            accent: '#8C3B29', // Rouge brique / terracotta
+                            gold: '#D4AF37',
+                            cream: '#FDFBF7',
+                            light: '#F4ECE1'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-charcu-cream text-charcu-dark font-sans antialiased min-h-full flex flex-col selection:bg-charcu-accent selection:text-white">
+
+    <!-- BARRE DE NAVIGATION BLUR (Flottante avec espace en haut) -->
+    <header class="fixed top-3 left-0 right-0 z-50 flex justify-center px-4">
+        <nav class="w-full max-w-5xl bg-charcu-cream/80 backdrop-blur-md border border-charcu-wood/10 shadow-lg rounded-full px-6 py-3 flex items-center justify-between transition-all">
+            <!-- Logo / Nom de la Charcuterie -->
+            <a href="#" class="font-serif text-xl font-bold tracking-wider text-charcu-wood flex items-center gap-2">
+                <span class="text-charcu-accent">✦</span> Ô Cochonneries Tarnaises
+            </a>
+
+            <!-- Liens de navigation -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-charcu-wood/80">
+                <a href="#accueil" class="hover:text-charcu-accent transition-colors">Accueil</a>
+                <a href="#savoir-faire" class="hover:text-charcu-accent transition-colors">Notre Savoir-Faire</a>
+                <a href="#produits" class="hover:text-charcu-accent transition-colors">Spécialités</a>
+                <a href="#contact" class="hover:text-charcu-accent transition-colors">Contact & Horaires</a>
+            </div>
+
+            <!-- Bouton d'action rapide -->
+            <a href="#contact" class="bg-charcu-accent hover:bg-charcu-wood text-white text-xs md:text-sm font-semibold px-4 py-2 rounded-full transition-colors shadow-sm">
+                Commander / Panier
+            </a>
+        </nav>
+    </header>
+
+    <!-- CONTENU PRINCIPAL (Centré, prenant 3/4 de la largeur de l'écran) -->
+    <main class="w-3/4 mx-auto flex-grow pt-28 pb-16 flex flex-col gap-16">
+
+        <!-- SECTION HERO -->
+        <section id="accueil" class="bg-charcu-light border border-charcu-wood/10 rounded-3xl p-8 md:p-14 shadow-sm flex flex-col md:flex-row items-center gap-10">
+            <div class="flex-1 space-y-6">
+                <span class="inline-block bg-charcu-accent/10 text-charcu-accent text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                    Artisan Charcutier depuis 1984
+                </span>
+                <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-charcu-wood font-bold leading-tight">
+                    L'authenticité <br>du <span class="text-charcu-accent">fait-maison</span>.
+                </h1>
+                <p class="text-charcu-dark/80 text-base md:text-lg leading-relaxed">
+                    Découvrez nos jambons affinés, nos terrines traditionnelles et nos viandes sélectionnées avec passion au cœur de notre terroir. Le goût du vrai, préparé dans le respect de la tradition.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#produits" class="bg-charcu-wood hover:bg-charcu-accent text-white font-medium px-6 py-3 rounded-full transition-colors shadow">
+                        Découvrir nos produits
+                    </a>
+                    <a href="#savoir-faire" class="border border-charcu-wood/30 hover:border-charcu-wood text-charcu-wood font-medium px-6 py-3 rounded-full transition-colors">
+                        Notre histoire
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Visuel Photo HTML intégrant une vraie image de planche de charcuterie -->
+            <div class="flex-1 w-full">
+                <div class="w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-md relative group border border-charcu-wood/20">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000&auto=format&fit=crop" 
+                         alt="Planche de charcuterie artisanale" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcu-dark/40 via-transparent to-transparent pointer-events-none"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION SPÉCIALITÉS -->
+        <section id="produits" class="space-y-8">
+            <div class="text-center space-y-2">
+                <h2 class="font-serif text-3xl font-bold text-charcu-wood">Nos Incontournables</h2>
+                <p class="text-charcu-dark/70 text-sm md:text-base">Élaborés chaque semaine dans notre laboratoire avec des viandes rigoureusement sélectionnées.</p>
+            </div>
+
+            <!-- Grille de produits -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Carte 1 -->
+                <div class="bg-white border border-charcu-wood/10 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="h-40 bg-charcu-light rounded-xl mb-4 flex items-center justify-center text-3xl">🥓</div>
+                        <h3 class="font-serif text-xl font-bold text-charcu-wood mb-2">Le Jambon Blanc Truffé</h3>
+                        <p class="text-sm text-charcu-dark/70">Cuit lentement au bouillon, brisures de truffe noire d'été. Doux et fondant en bouche.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-charcu-light flex items-center justify-between">
+                        <span class="font-bold text-charcu-accent">34,00 € / kg</span>
+                        <span class="text-xs uppercase font-semibold bg-charcu-light px-2.5 py-1 rounded-md text-charcu-wood">Artisanal</span>
+                    </div>
+                </div>
+
+                <!-- Carte 2 -->
+                <div class="bg-white border border-charcu-wood/10 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="h-40 bg-charcu-light rounded-xl mb-4 flex items-center justify-center text-3xl">🏺</div>
+                        <h3 class="font-serif text-xl font-bold text-charcu-wood mb-2">Pâté en Croute Tradition</h3>
+                        <p class="text-sm text-charcu-dark/70">Pâte pur beurre croustillante, farce de porc fermier, foie de volaille et pistaches.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-charcu-light flex items-center justify-between">
+                        <span class="font-bold text-charcu-accent">28,50 € / kg</span>
+                        <span class="text-xs uppercase font-semibold bg-charcu-light px-2.5 py-1 rounded-md text-charcu-wood">Fait Maison</span>
+                    </div>
+                </div>
+
+                <!-- Carte 3 -->
+                <div class="bg-white border border-charcu-wood/10 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="h-40 bg-charcu-light rounded-xl mb-4 flex items-center justify-center text-3xl">🌿</div>
+                        <h3 class="font-serif text-xl font-bold text-charcu-wood mb-2">Saucisson Sec de Lacaune</h3>
+                        <p class="text-sm text-charcu-dark/70">Affiné 8 semaines en séchoir naturel, gros grain, pointe d'ail et poivre noir concassé.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-charcu-light flex items-center justify-between">
+                        <span class="font-bold text-charcu-accent">6,80 € la pièce</span>
+                        <span class="text-xs uppercase font-semibold bg-charcu-light px-2.5 py-1 rounded-md text-charcu-wood">Affiné</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION CONTACT / HORAIRES -->
+        <section id="contact" class="bg-charcu-wood text-charcu-cream rounded-3xl p-8 md:p-12 shadow-sm flex flex-col md:flex-row justify-between gap-8 items-center">
+            <div class="space-y-4 max-w-lg">
+                <h2 class="font-serif text-3xl font-bold">Venez nous rendre visite</h2>
+                <p class="text-charcu-light/80 text-sm md:text-base">
+                    Retirez vos commandes en boutique ou venez composer votre plateau apéritif sur-mesure directement au comptoir.
+                </p>
+                <div class="text-sm space-y-1 text-charcu-light/90 pt-2">
+                    <p>📍 12 Rue de la République, 75001 Paris</p>
+                    <p>🕒 Mar - Sam : 8h30 - 19h30 | Dim : 8h30 - 13h00</p>
+                    <p>📞 01 42 68 00 00</p>
+                </div>
+            </div>
+            <div>
+                <a href="tel:0142680000" class="bg-charcu-accent hover:bg-white hover:text-charcu-dark text-white font-medium px-8 py-4 rounded-full transition-all shadow-lg block text-center">
+                    Appeler la boutique
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-charcu-wood/10 py-6 text-center text-xs text-charcu-wood/60">
+        <p>© 2026 Maison Goumand - Charcuterie Artisanale. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
