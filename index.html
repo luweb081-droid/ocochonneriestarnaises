@@ -62,7 +62,7 @@
             <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-charcu-wood/70">
                 <a href="#accueil" class="hover:text-charcu-accent transition-colors">Accueil</a>
                 <a href="#savoir-faire" class="hover:text-charcu-accent transition-colors">Notre savoir-faire</a>
-                <a href="#origine" class="hover:text-charcu-accent transition-colors">Origine</a>
+                <a href="origine.html" class="hover:text-charcu-accent transition-colors">Origine</a>
                 <a href="#produits" class="hover:text-charcu-accent transition-colors">Spécialités</a>
                 <a href="recettes.html" class="hover:text-charcu-accent transition-colors">Recettes</a>
                 <a href="#marches" class="hover:text-charcu-accent transition-colors">Nos marchés</a>
@@ -142,9 +142,14 @@
                         Des recettes préparées avec patience, des produits choisis avec attention
                         et un savoir-faire qui se transmet au fil des années.
                     </p>
-                    <a href="#contact" class="inline-flex items-center gap-2 mt-8 text-charcu-wood font-semibold border-b border-charcu-accent pb-1 hover:text-charcu-accent transition-colors">
-                        Découvrir notre savoir-faire <span>↗</span>
-                    </a>
+                    <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+                        <a href="#contact" class="inline-flex items-center gap-2 text-charcu-wood font-semibold border-b border-charcu-accent pb-1 hover:text-charcu-accent transition-colors">
+                            Découvrir notre savoir-faire <span>↗</span>
+                        </a>
+                        <a href="origine.html" class="inline-flex items-center gap-2 text-charcu-wood font-semibold border-b border-charcu-accent pb-1 hover:text-charcu-accent transition-colors">
+                            D'où viennent nos cochons ? <span>→</span>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="relative h-[400px] md:h-[480px]">
@@ -161,36 +166,6 @@
                     <div class="absolute left-[43%] bottom-0 bg-charcu-wood text-white rounded-2xl px-5 py-4 shadow-xl -rotate-2">
                         <p class="font-serif text-xl">Fait avec passion</p>
                         <p class="text-xs text-white/60 mt-1">Dans notre atelier</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NOUVELLE SECTION : D'où vient le cochon et nos produits -->
-        <section id="origine" class="px-5 md:px-10 lg:px-16">
-            <div class="max-w-7xl mx-auto bg-charcu-light/60 border border-charcu-wood/10 rounded-[2.5rem] p-8 md:p-14">
-                <div class="grid lg:grid-cols-2 gap-10 items-center">
-                    <div class="space-y-4">
-                        <span class="text-charcu-accent text-xs font-bold uppercase tracking-[0.2em]">Terroir & Engagements</span>
-                        <h2 class="font-serif text-3xl md:text-4xl font-semibold text-charcu-wood">D'où vient notre cochon et nos produits ?</h2>
-                        <p class="text-charcu-dark/70 text-sm md:text-base leading-relaxed">
-                            Chez <strong>Ô Cochonneries Tarnaises</strong>, nous sélectionnons rigoureusement nos porcs exclusivement auprès de petits éleveurs partenaires indépendants situés au cœur de notre belle région du Tarn et des départements limitrophes. 
-                        </p>
-                        <p class="text-charcu-dark/70 text-sm md:text-base leading-relaxed">
-                            Nos animaux sont nourris sainement aux céréales garanties sans OGM issues de cultures locales. C'est cette exigence sur l'origine et le bien-être animal qui garantit une viande persée, tendre et savoureuse, indispensable à la confection de nos charcuteries traditionnelles.
-                        </p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-charcu-surface p-5 rounded-2xl border border-charcu-wood/5 shadow-sm">
-                            <span class="text-2xl">🌱</span>
-                            <h3 class="font-serif text-lg font-semibold text-charcu-wood mt-2">100% Local</h3>
-                            <p class="text-xs text-charcu-dark/60 mt-1">Élevages partenaires du Tarn et Occitanie.</p>
-                        </div>
-                        <div class="bg-charcu-surface p-5 rounded-2xl border border-charcu-wood/5 shadow-sm">
-                            <span class="text-2xl">🌾</span>
-                            <h3 class="font-serif text-lg font-semibold text-charcu-wood mt-2">Alimentation saine</h3>
-                            <p class="text-xs text-charcu-dark/60 mt-1">Céréales locales et garanties sans OGM.</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -435,7 +410,7 @@
     </footer>
 
 <script>
-    const revealItems = document.querySelectorAll("#savoir-faire, #origine, #produits, #recettes, #marches, #contact");
+    const revealItems = document.querySelectorAll("#savoir-faire, #produits, #recettes, #marches, #contact");
     revealItems.forEach(el => el.classList.add("reveal"));
 
     const observer = new IntersectionObserver((entries) => {

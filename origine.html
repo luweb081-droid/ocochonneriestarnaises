@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'où viennent nos cochons - Ô Cochonneries Tarnaises</title>
+    <meta name="description" content="Nos cochons grandissent en plein air chez des éleveurs indépendants du Tarn, nourris aux céréales locales sans OGM. Découvrez l'histoire de nos produits.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        charcu: {
+                            dark: '#2A1A17',
+                            wood: '#4A2E2B',
+                            accent: '#8C3B29',
+                            gold: '#D4AF37',
+                            cream: '#F7F2EB',
+                            surface: '#FFFFFF',
+                            light: '#EFE8DC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-charcu-cream text-charcu-dark antialiased min-h-full flex flex-col selection:bg-charcu-accent selection:text-white">
+<style>
+    html { scroll-behavior: smooth; }
+    body { font-family: "DM Sans", sans-serif; }
+    .font-serif { font-family: "Playfair Display", serif; }
+    .hero-title { text-wrap: balance; }
+
+    /* Cadre photo : si l'image n'existe pas encore, on affiche un fond chaleureux discret */
+    .photo-slot { background: linear-gradient(135deg, #EFE8DC, #D9CBB5); }
+    .photo-slot.img-missing { display: flex; align-items: center; justify-content: center; }
+    .photo-slot.img-missing::before { content: "🐖"; font-size: 3rem; opacity: .45; }
+
+    :focus-visible { outline: 2px solid #8C3B29; outline-offset: 3px; }
+
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .group { transition: none !important; }
+    }
+</style>
+
+    <header class="fixed top-4 left-0 right-0 z-50 px-4">
+        <nav class="mx-auto max-w-6xl bg-white/85 backdrop-blur-xl border border-charcu-wood/10 shadow-[0_10px_40px_rgba(42,26,23,0.08)] rounded-full px-5 md:px-7 py-3 flex items-center justify-between">
+            <a href="index.html#accueil" class="font-serif text-lg md:text-xl font-semibold tracking-tight text-charcu-wood flex items-center gap-2">
+                Ô Cochonneries Tarnaises
+            </a>
+
+            <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-charcu-wood/70">
+                <a href="index.html#accueil" class="hover:text-charcu-accent transition-colors">Accueil</a>
+                <a href="index.html#savoir-faire" class="hover:text-charcu-accent transition-colors">Notre savoir-faire</a>
+                <a href="origine.html" aria-current="page" class="text-charcu-accent font-semibold">Origine</a>
+                <a href="index.html#produits" class="hover:text-charcu-accent transition-colors">Spécialités</a>
+                <a href="recettes.html" class="hover:text-charcu-accent transition-colors">Recettes</a>
+                <a href="index.html#marches" class="hover:text-charcu-accent transition-colors">Nos marchés</a>
+                <a href="index.html#contact" class="hover:text-charcu-accent transition-colors">Contact</a>
+            </div>
+
+            <a href="index.html#contact" class="bg-charcu-wood hover:bg-charcu-accent text-white text-xs md:text-sm font-semibold px-4 md:px-5 py-2.5 rounded-full transition-all shadow-sm">
+                Commander
+            </a>
+        </nav>
+    </header>
+
+    <main class="w-full flex-grow pt-24 pb-20 flex flex-col gap-20 md:gap-24">
+
+        <!-- En-tête de page -->
+        <section class="relative mx-2 md:mx-6 lg:mx-auto w-auto lg:w-full max-w-[94rem] min-h-[420px] lg:min-h-[500px] rounded-[2rem] overflow-hidden shadow-[0_25px_80px_rgba(42,26,23,0.16)] bg-charcu-wood">
+            <!-- Photo : static/images/elevage/elevage-1.jpg -->
+            <img
+                src="static/images/elevage/elevage-1.jpg"
+                alt="Cochons en plein air dans une prairie du Tarn"
+                class="absolute inset-0 w-full h-full object-cover"
+                onerror="this.remove()"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-charcu-dark/95 via-charcu-dark/75 to-charcu-dark/30"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-charcu-dark/50 via-transparent to-transparent"></div>
+
+            <div class="relative z-10 min-h-[420px] lg:min-h-[500px] flex items-center">
+                <div class="px-7 py-14 md:px-14 lg:px-20 text-white">
+                    <nav aria-label="Fil d'Ariane" class="text-xs text-white/60 mb-5">
+                        <a href="index.html#accueil" class="hover:text-white transition-colors">Accueil</a>
+                        <span class="mx-2">/</span>
+                        <span class="text-white/90">Origine</span>
+                    </nav>
+
+                    <h1 class="hero-title max-w-3xl font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-[-0.02em]">
+                        D'où viennent <span class="text-charcu-gold">nos cochons</span> ?
+                    </h1>
+                    <p class="mt-5 max-w-xl text-white/80 text-sm md:text-base leading-relaxed">
+                        Ils grandissent dehors, chez des éleveurs indépendants du Tarn et des départements voisins.
+                        Voici comment tout a commencé.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Histoire -->
+        <section class="px-5 md:px-10 lg:px-16">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-[1.05fr_0.95fr] gap-14 lg:gap-24 items-center">
+                <div class="max-w-xl">
+                    <span class="text-charcu-accent text-xs font-bold uppercase tracking-[0.2em]">Notre histoire</span>
+                    <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-charcu-wood mt-4 leading-[1.1]">
+                        Tout commence par une visite à la ferme.
+                    </h2>
+
+                    <div class="mt-6 space-y-5 text-charcu-dark/70 text-base leading-[1.75]">
+                        <p>
+                            Quand la maison ouvre ses portes en 1984, la règle est simple : on ne travaille que ce qu'on a vu de ses yeux.
+                            Avant de penser aux recettes, il a fallu prendre la route pour rencontrer des éleveurs, dans le Tarn et alentour.
+                        </p>
+                        <p>
+                            Ce que nous cherchions tient en peu de mots : des cochons qui vivent dehors, sur l'herbe,
+                            avec de la place pour fouiller la terre, courir et se reposer à l'ombre.
+                            Des animaux qui prennent le temps de grandir, nourris avec des céréales cultivées près de chez eux, sans OGM.
+                        </p>
+                        <p>
+                            Les mêmes familles d'éleveurs nous livrent année après année. Nous connaissons leurs parcelles, elles connaissent notre atelier.
+                            Quand l'un d'eux nous appelle pour dire que les porcs sont prêts, nous savons de quelle prairie ils viennent.
+                        </p>
+                        <p>
+                            Le reste se passe à l'atelier : le jambon cuit lentement au bouillon, le pâté en croûte, le saucisson affiné en séchoir naturel.
+                            Une bonne viande demande surtout du temps et du geste.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Photos : static/images/elevage/elevage-2.jpg et elevage-3.jpg -->
+                <div class="relative h-[420px] md:h-[520px]">
+                    <div class="photo-slot absolute right-0 top-0 w-[70%] h-[72%] rotate-3 rounded-3xl overflow-hidden shadow-2xl border-[8px] border-white">
+                        <img src="static/images/elevage/elevage-2.jpg"
+                             alt="Des cochons sur leur parcours en plein air"
+                             class="w-full h-full object-cover"
+                             loading="lazy"
+                             onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                    <div class="photo-slot absolute left-0 bottom-0 w-[52%] h-[52%] -rotate-6 rounded-3xl overflow-hidden shadow-2xl border-[8px] border-white">
+                        <img src="static/images/elevage/elevage-3.jpg"
+                             alt="Un éleveur partenaire avec ses animaux"
+                             class="w-full h-full object-cover"
+                             loading="lazy"
+                             onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nos engagements -->
+        <section class="px-5 md:px-10 lg:px-16">
+            <div class="max-w-7xl mx-auto bg-charcu-light/60 border border-charcu-wood/10 rounded-[2.5rem] p-8 md:p-14">
+                <div class="max-w-2xl">
+                    <span class="text-charcu-accent text-xs font-bold uppercase tracking-[0.2em]">Terroir & engagements</span>
+                    <h2 class="font-serif text-3xl md:text-4xl font-semibold text-charcu-wood mt-3">Ce que nous exigeons de nos éleveurs</h2>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="bg-charcu-surface p-6 rounded-2xl border border-charcu-wood/5 shadow-sm">
+                        <span class="text-2xl">🌿</span>
+                        <h3 class="font-serif text-xl font-semibold text-charcu-wood mt-3">Élevage en plein air</h3>
+                        <p class="text-sm text-charcu-dark/65 mt-2 leading-relaxed">Les cochons vivent dehors, avec de l'espace pour bouger, fouiller et se reposer.</p>
+                    </div>
+                    <div class="bg-charcu-surface p-6 rounded-2xl border border-charcu-wood/5 shadow-sm">
+                        <span class="text-2xl">🌾</span>
+                        <h3 class="font-serif text-xl font-semibold text-charcu-wood mt-3">Alimentation saine</h3>
+                        <p class="text-sm text-charcu-dark/65 mt-2 leading-relaxed">Des céréales issues de cultures locales, garanties sans OGM.</p>
+                    </div>
+                    <div class="bg-charcu-surface p-6 rounded-2xl border border-charcu-wood/5 shadow-sm">
+                        <span class="text-2xl">🤝</span>
+                        <h3 class="font-serif text-xl font-semibold text-charcu-wood mt-3">Éleveurs indépendants</h3>
+                        <p class="text-sm text-charcu-dark/65 mt-2 leading-relaxed">De petits élevages du Tarn et de la région Occitanie, que nous visitons.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galerie : static/images/elevage/elevage-4.jpg, -5.jpg, -6.jpg -->
+        <section class="px-5 md:px-10 lg:px-16 space-y-8">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-serif text-3xl md:text-4xl font-semibold text-charcu-wood">Dans les prairies</h2>
+                <p class="max-w-xl text-charcu-dark/60 mt-2 leading-relaxed">Quelques images prises chez nos éleveurs partenaires.</p>
+            </div>
+
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+                <figure>
+                    <div class="photo-slot h-72 rounded-3xl overflow-hidden shadow-sm">
+                        <img src="static/images/elevage/elevage-4.jpg" alt="Un troupeau de cochons dans une prairie" class="w-full h-full object-cover" loading="lazy" onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                    <figcaption class="text-sm text-charcu-dark/60 mt-3">Un parcours en plein air, dans le Tarn.</figcaption>
+                </figure>
+                <figure>
+                    <div class="photo-slot h-72 rounded-3xl overflow-hidden shadow-sm">
+                        <img src="static/images/elevage/elevage-5.jpg" alt="Champ de céréales près d'un élevage" class="w-full h-full object-cover" loading="lazy" onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                    <figcaption class="text-sm text-charcu-dark/60 mt-3">Les céréales sont cultivées à proximité de l'élevage.</figcaption>
+                </figure>
+                <figure>
+                    <div class="photo-slot h-72 rounded-3xl overflow-hidden shadow-sm">
+                        <img src="static/images/elevage/elevage-6.jpg" alt="Cochons qui se reposent à l'ombre" class="w-full h-full object-cover" loading="lazy" onerror="this.parentElement.classList.add('img-missing');this.remove()">
+                    </div>
+                    <figcaption class="text-sm text-charcu-dark/60 mt-3">Le repos à l'ombre, en fin de journée.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- De la prairie au comptoir -->
+        <section class="px-5 md:px-10 lg:px-16 space-y-10">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-serif text-3xl md:text-4xl font-semibold text-charcu-wood">De la prairie au comptoir</h2>
+            </div>
+
+            <ol class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <li class="bg-charcu-surface border border-charcu-wood/5 rounded-3xl p-6 shadow-sm">
+                    <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-charcu-wood text-white text-sm font-semibold">1</span>
+                    <h3 class="font-serif text-xl font-semibold text-charcu-wood mt-4">L'élevage</h3>
+                    <p class="text-sm text-charcu-dark/65 mt-2 leading-relaxed">Les cochons grandissent en plein air chez un éleveur partenaire.</p>
+                </li>
+                <li class="bg-charcu-surface border border-charcu-wood/5 rounded-3xl p-6 shadow-sm">
+                    <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-charcu-wood text-white text-sm font-semibold">2</span>
+                    <h3 class="font-serif text-xl font-semibold text-charcu-wood mt-4">La sélection</h3>
+                    <p class="text-sm text-charcu-dark/65 mt-2 leading-relaxed">Nous choisissons les animaux à la ferme, quand ils sont prêts.</p>
+                </li>
+                <li class="bg-charcu-surface border border-charcu-wood/5 rounded-3xl p-6 shadow-sm">
+                    <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-charcu-wood text-white text-sm font-semibold">3</span>
+                    <h3 class="font-serif text-xl font-semibold text-charcu-wood mt-4">L'atelier</h3>
+                    <p class="text-sm text-charcu-dark/65 mt-2 leading-relaxed">Jambon, pâté en croûte et saucisson sont préparés chaque semaine.</p>
+                </li>
+                <li class="bg-charcu-surface border border-charcu-wood/5 rounded-3xl p-6 shadow-sm">
+                    <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-charcu-wood text-white text-sm font-semibold">4</span>
+                    <h3 class="font-serif text-xl font-semibold text-charcu-wood mt-4">Le comptoir</h3>
+                    <p class="text-sm text-charcu-dark/65 mt-2 leading-relaxed">Vous les trouvez sur nos marchés du Tarn et en boutique à Albi.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Appel à l'action -->
+        <section class="mx-4 md:mx-8 lg:mx-auto w-auto lg:w-full max-w-7xl bg-charcu-wood text-charcu-cream rounded-3xl p-8 md:p-12 shadow-sm flex flex-col md:flex-row justify-between gap-8 items-center">
+            <div class="space-y-3 max-w-lg">
+                <h2 class="font-serif text-3xl font-bold">Goûtez la différence</h2>
+                <p class="text-charcu-light/80 text-sm md:text-base">
+                    Découvrez nos spécialités, ou cuisinez-les chez vous avec nos recettes.
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                <a href="index.html#produits" class="bg-charcu-accent hover:bg-white hover:text-charcu-dark text-white font-medium px-7 py-3.5 rounded-full transition-all shadow-lg text-center">
+                    Voir nos spécialités
+                </a>
+                <a href="recettes.html" class="border border-white/35 hover:bg-white/10 text-white font-medium px-7 py-3.5 rounded-full transition-all text-center">
+                    Nos recettes
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-charcu-wood/10 py-8 mt-4 text-center text-xs text-charcu-wood/60">
+        <p>© 2026 Ô Cochonneries Tarnaises - Charcuterie Artisanale. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
