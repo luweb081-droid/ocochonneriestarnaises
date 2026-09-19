@@ -23,7 +23,6 @@ const SITE = {
 /* Menu du haut. "page" sert à repérer la page en cours (nom du fichier sans .html). */
 const MENU = [
     { label: "Accueil",           href: "index.html#accueil" },
-    { label: "Notre savoir-faire", href: "index.html#savoir-faire" },
     { label: "Origine",           href: "origine.html",  page: "origine" },
     { label: "Spécialités",       href: "index.html#produits" },
     { label: "Recettes",          href: "recettes.html", page: "recettes" },
@@ -142,9 +141,9 @@ class SiteFooter extends HTMLElement {
                 <div>
                     <h2 class="font-serif text-lg font-semibold text-white">La boutique</h2>
                     <ul class="mt-4 space-y-2.5 text-sm text-charcu-light/70">
-                        <li>📍 ${SITE.adresse}</li>
-                        <li>🕒 ${SITE.horaires}</li>
-                        <li>📞 <a href="tel:${SITE.telephoneLien}" class="hover:text-charcu-gold transition-colors">${SITE.telephone}</a></li>
+                        <li> ${SITE.adresse}</li>
+                        <li> ${SITE.horaires}</li>
+                        <li> <a href="tel:${SITE.telephoneLien}" class="hover:text-charcu-gold transition-colors">${SITE.telephone}</a></li>
                     </ul>
                 </div>
             </div>
