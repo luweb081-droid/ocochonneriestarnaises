@@ -18,7 +18,7 @@
                             wood: '#4A2E2B',
                             accent: '#8C3B29', // Rouge brique / terracotta
                             gold: '#D4AF37',
-                            cream: '#F7F2EB',    // Fond global chaleureux et sableux
+                            cream: '#F7F2EB',   // Fond global chaleureux et sableux
                             surface: '#FFFFFF',  // Fond de carte blanc pour le contraste
                             light: '#EFE8DC'
                         }
@@ -62,7 +62,9 @@
             <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-charcu-wood/70">
                 <a href="#accueil" class="hover:text-charcu-accent transition-colors">Accueil</a>
                 <a href="#savoir-faire" class="hover:text-charcu-accent transition-colors">Notre savoir-faire</a>
+                <a href="#origine" class="hover:text-charcu-accent transition-colors">Origine</a>
                 <a href="#produits" class="hover:text-charcu-accent transition-colors">Spécialités</a>
+                <a href="recettes.html" class="hover:text-charcu-accent transition-colors">Recettes</a>
                 <a href="#marches" class="hover:text-charcu-accent transition-colors">Nos marchés</a>
                 <a href="#contact" class="hover:text-charcu-accent transition-colors">Contact</a>
             </div>
@@ -86,7 +88,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-charcu-dark/55 via-transparent to-transparent"></div>
 
             <div class="relative z-10 min-h-[500px] lg:min-h-[600px] flex items-center">
-                <!-- Cadre photo du gérant décalé à droite et réduit en taille -->
+                <!-- Cadre photo du gérant (taille d'origine) -->
                 <div class="hidden md:block absolute right-12 lg:right-24 top-1/2 -translate-y-1/2 w-[300px] lg:w-[380px] h-[420px] lg:h-[520px] rotate-[3deg] rounded-[1.5rem] overflow-hidden border-[8px] border-white/90 shadow-[0_25px_70px_rgba(0,0,0,.35)] bg-charcu-wood/30 z-20">
                     <img
                         src="static/images/chef2.png"
@@ -99,7 +101,6 @@
                     </div>
                 </div>
 
-                <!-- Texte du hero ajusté pour la nouvelle hauteur -->
                 <div class="w-full max-w-4xl lg:max-w-6xl px-7 py-10 md:px-14 lg:px-20 lg:pr-[420px] text-white">
                     <div class="flex items-center gap-3 mb-4">
                         <span class="h-px w-8 bg-charcu-gold"></span>
@@ -160,6 +161,36 @@
                     <div class="absolute left-[43%] bottom-0 bg-charcu-wood text-white rounded-2xl px-5 py-4 shadow-xl -rotate-2">
                         <p class="font-serif text-xl">Fait avec passion</p>
                         <p class="text-xs text-white/60 mt-1">Dans notre atelier</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOUVELLE SECTION : D'où vient le cochon et nos produits -->
+        <section id="origine" class="px-5 md:px-10 lg:px-16">
+            <div class="max-w-7xl mx-auto bg-charcu-light/60 border border-charcu-wood/10 rounded-[2.5rem] p-8 md:p-14">
+                <div class="grid lg:grid-cols-2 gap-10 items-center">
+                    <div class="space-y-4">
+                        <span class="text-charcu-accent text-xs font-bold uppercase tracking-[0.2em]">Terroir & Engagements</span>
+                        <h2 class="font-serif text-3xl md:text-4xl font-semibold text-charcu-wood">D'où vient notre cochon et nos produits ?</h2>
+                        <p class="text-charcu-dark/70 text-sm md:text-base leading-relaxed">
+                            Chez <strong>Ô Cochonneries Tarnaises</strong>, nous sélectionnons rigoureusement nos porcs exclusivement auprès de petits éleveurs partenaires indépendants situés au cœur de notre belle région du Tarn et des départements limitrophes. 
+                        </p>
+                        <p class="text-charcu-dark/70 text-sm md:text-base leading-relaxed">
+                            Nos animaux sont nourris sainement aux céréales garanties sans OGM issues de cultures locales. C'est cette exigence sur l'origine et le bien-être animal qui garantit une viande persée, tendre et savoureuse, indispensable à la confection de nos charcuteries traditionnelles.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-charcu-surface p-5 rounded-2xl border border-charcu-wood/5 shadow-sm">
+                            <span class="text-2xl">🌱</span>
+                            <h3 class="font-serif text-lg font-semibold text-charcu-wood mt-2">100% Local</h3>
+                            <p class="text-xs text-charcu-dark/60 mt-1">Élevages partenaires du Tarn et Occitanie.</p>
+                        </div>
+                        <div class="bg-charcu-surface p-5 rounded-2xl border border-charcu-wood/5 shadow-sm">
+                            <span class="text-2xl">🌾</span>
+                            <h3 class="font-serif text-lg font-semibold text-charcu-wood mt-2">Alimentation saine</h3>
+                            <p class="text-xs text-charcu-dark/60 mt-1">Céréales locales et garanties sans OGM.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -235,6 +266,60 @@
                         <p class="text-sm text-charcu-dark/65 mt-3 leading-relaxed">Affiné 8 semaines en séchoir naturel, gros grain, ail et poivre noir concassé.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Idées Recettes à partir des produits (aperçu, la suite est sur recettes.html) -->
+        <section id="recettes" class="px-5 md:px-10 lg:px-16 space-y-8">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+                <div>
+                    <span class="text-charcu-accent text-xs font-bold uppercase tracking-[0.2em]">En cuisine</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-semibold text-charcu-wood mt-2">Nos idées recettes gourmandes</h2>
+                    <p class="max-w-xl text-charcu-dark/60 mt-2 leading-relaxed">
+                        Mettez en valeur nos produits artisanaux à travers des recettes simples et savoureuses à réaliser chez vous.
+                    </p>
+                </div>
+                <a href="recettes.html" class="inline-flex items-center gap-2 self-start md:self-auto bg-charcu-wood hover:bg-charcu-accent text-white text-sm font-semibold px-6 py-3 rounded-full transition-all shadow-sm whitespace-nowrap">
+                    Voir toutes les recettes <span aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Recette 1 -->
+                <a href="recettes.html#croque-truffe" class="group bg-charcu-surface border border-charcu-wood/5 rounded-3xl p-6 shadow-sm flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl transition-all duration-500">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-charcu-cream text-charcu-wood text-xs font-bold px-3 py-1 rounded-full">Plat principal</span>
+                            <span class="text-xs text-charcu-dark/60">⏱️ 25 min</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-semibold text-charcu-wood group-hover:text-charcu-accent transition-colors">Croque-monsieur truffé au Jambon Blanc</h3>
+                        <p class="text-sm text-charcu-dark/65 mt-3 leading-relaxed">
+                            Sublimez un simple croque-monsieur en tranche épaisse avec notre <strong>Jambon Blanc Truffé</strong>, du comté affiné et une touche de béchamel maison. Un délice fondant !
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-charcu-wood/5 flex items-center justify-between gap-3 text-xs">
+                        <span class="text-charcu-accent font-semibold">💡 Astuce : ajoutez une pointe de fleur de sel au moment de servir.</span>
+                        <span class="text-charcu-wood font-semibold whitespace-nowrap">Voir la recette →</span>
+                    </div>
+                </a>
+
+                <!-- Recette 2 -->
+                <a href="recettes.html#salade-paysanne" class="group bg-charcu-surface border border-charcu-wood/5 rounded-3xl p-6 shadow-sm flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl transition-all duration-500">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-charcu-cream text-charcu-wood text-xs font-bold px-3 py-1 rounded-full">Apéritif / Entrée</span>
+                            <span class="text-xs text-charcu-dark/60">⏱️ 15 min</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-semibold text-charcu-wood group-hover:text-charcu-accent transition-colors">Salade tiède paysanne au Pâté en Croûte</h3>
+                        <p class="text-sm text-charcu-dark/65 mt-3 leading-relaxed">
+                            Poêlez légèrement de belles tranches épaisses de notre <strong>Pâté en Croûte Tradition</strong> et déposez-les sur un lit de salade croquante, noix du Tarn et vinaigrette au miel.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-charcu-wood/5 flex items-center justify-between gap-3 text-xs">
+                        <span class="text-charcu-accent font-semibold">💡 Astuce : à déguster avec un vin rouge léger de Gaillac.</span>
+                        <span class="text-charcu-wood font-semibold whitespace-nowrap">Voir la recette →</span>
+                    </div>
+                </a>
             </div>
         </section>
 
@@ -350,7 +435,7 @@
     </footer>
 
 <script>
-    const revealItems = document.querySelectorAll("#savoir-faire, #produits, #marches, #contact");
+    const revealItems = document.querySelectorAll("#savoir-faire, #origine, #produits, #recettes, #marches, #contact");
     revealItems.forEach(el => el.classList.add("reveal"));
 
     const observer = new IntersectionObserver((entries) => {

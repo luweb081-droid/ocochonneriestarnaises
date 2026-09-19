@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos recettes - Ô Cochonneries Tarnaises</title>
+    <meta name="description" content="Idées de recettes simples et gourmandes à préparer avec la charcuterie artisanale d'Ô Cochonneries Tarnaises : jambon truffé, pâté en croûte, saucisson sec de Lacaune.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        charcu: {
+                            dark: '#2A1A17',
+                            wood: '#4A2E2B',
+                            accent: '#8C3B29',
+                            gold: '#D4AF37',
+                            cream: '#F7F2EB',
+                            surface: '#FFFFFF',
+                            light: '#EFE8DC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-charcu-cream text-charcu-dark antialiased min-h-full flex flex-col selection:bg-charcu-accent selection:text-white">
+<style>
+    html { scroll-behavior: smooth; }
+    body { font-family: "DM Sans", sans-serif; }
+    .font-serif { font-family: "Playfair Display", serif; }
+    .hero-title { text-wrap: balance; }
+    article[id] { scroll-margin-top: 6.5rem; }
+
+    /* Bouton "Voir la recette" (details/summary) */
+    summary { list-style: none; cursor: pointer; }
+    summary::-webkit-details-marker { display: none; }
+    details[open] .chev { transform: rotate(180deg); }
+    details[open] .label-closed { display: none; }
+    details:not([open]) .label-open { display: none; }
+    .chev { transition: transform .3s ease; }
+
+    /* Filtres */
+    .filter-btn[aria-pressed="true"] {
+        background-color: #4A2E2B;
+        color: #fff;
+        border-color: #4A2E2B;
+    }
+
+    :focus-visible { outline: 2px solid #8C3B29; outline-offset: 3px; }
+
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .group, .chev { transition: none !important; }
+    }
+</style>
+
+    <header class="fixed top-4 left-0 right-0 z-50 px-4">
+        <nav class="mx-auto max-w-6xl bg-white/85 backdrop-blur-xl border border-charcu-wood/10 shadow-[0_10px_40px_rgba(42,26,23,0.08)] rounded-full px-5 md:px-7 py-3 flex items-center justify-between">
+            <a href="index.html#accueil" class="font-serif text-lg md:text-xl font-semibold tracking-tight text-charcu-wood flex items-center gap-2">
+                Ô Cochonneries Tarnaises
+            </a>
+
+            <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-charcu-wood/70">
+                <a href="index.html#accueil" class="hover:text-charcu-accent transition-colors">Accueil</a>
+                <a href="index.html#savoir-faire" class="hover:text-charcu-accent transition-colors">Notre savoir-faire</a>
+                <a href="index.html#origine" class="hover:text-charcu-accent transition-colors">Origine</a>
+                <a href="index.html#produits" class="hover:text-charcu-accent transition-colors">Spécialités</a>
+                <a href="recettes.html" aria-current="page" class="text-charcu-accent font-semibold">Recettes</a>
+                <a href="index.html#marches" class="hover:text-charcu-accent transition-colors">Nos marchés</a>
+                <a href="index.html#contact" class="hover:text-charcu-accent transition-colors">Contact</a>
+            </div>
+
+            <a href="index.html#contact" class="bg-charcu-wood hover:bg-charcu-accent text-white text-xs md:text-sm font-semibold px-4 md:px-5 py-2.5 rounded-full transition-all shadow-sm">
+                Commander
+            </a>
+        </nav>
+    </header>
+
+    <main class="w-full flex-grow pt-24 pb-20 flex flex-col gap-14 md:gap-16">
+
+        <!-- En-tête de page -->
+        <section class="relative mx-2 md:mx-6 lg:mx-auto w-auto lg:w-full max-w-[94rem] rounded-[2rem] overflow-hidden shadow-[0_25px_80px_rgba(42,26,23,0.16)]">
+            <img
+                src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=85&w=1800&auto=format&fit=crop"
+                alt=""
+                class="absolute inset-0 w-full h-full object-cover"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-charcu-dark/95 via-charcu-dark/80 to-charcu-dark/40"></div>
+
+            <div class="relative z-10 px-7 py-14 md:px-14 lg:px-20 md:py-20 text-white">
+                <nav aria-label="Fil d'Ariane" class="text-xs text-white/60 mb-5">
+                    <a href="index.html#accueil" class="hover:text-white transition-colors">Accueil</a>
+                    <span class="mx-2">/</span>
+                    <span class="text-white/90">Recettes</span>
+                </nav>
+
+                <h1 class="hero-title max-w-3xl font-serif text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05] tracking-[-0.02em]">
+                    À table avec nos charcuteries
+                </h1>
+                <p class="mt-5 max-w-xl text-white/80 text-sm md:text-base leading-relaxed">
+                    Des recettes simples, testées à la maison, pour cuisiner notre jambon blanc truffé,
+                    notre pâté en croûte et notre saucisson sec de Lacaune.
+                </p>
+            </div>
+        </section>
+
+        <!-- Filtres + liste (générés depuis static/data/recettes.json) -->
+        <section class="px-5 md:px-10 lg:px-16">
+            <div class="max-w-7xl mx-auto">
+
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-10">
+                    <div id="filters" role="group" aria-label="Filtrer les recettes" class="flex flex-wrap gap-2"></div>
+                    <p id="result-count" class="text-sm text-charcu-dark/60" aria-live="polite"></p>
+                </div>
+
+                <div id="recipe-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+                    <p class="text-sm text-charcu-dark/60 md:col-span-2 lg:col-span-3">Chargement des recettes…</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appel à l'action -->
+        <section class="mx-4 md:mx-8 lg:mx-auto w-auto lg:w-full max-w-7xl bg-charcu-wood text-charcu-cream rounded-3xl p-8 md:p-12 shadow-sm flex flex-col md:flex-row justify-between gap-8 items-center">
+            <div class="space-y-3 max-w-lg">
+                <h2 class="font-serif text-3xl font-bold">Envie de les essayer ?</h2>
+                <p class="text-charcu-light/80 text-sm md:text-base">
+                    Retrouvez tous les produits de ces recettes sur nos marchés du Tarn ou directement en boutique à Albi.
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                <a href="index.html#produits" class="bg-charcu-accent hover:bg-white hover:text-charcu-dark text-white font-medium px-7 py-3.5 rounded-full transition-all shadow-lg text-center">
+                    Voir nos spécialités
+                </a>
+                <a href="index.html#marches" class="border border-white/35 hover:bg-white/10 text-white font-medium px-7 py-3.5 rounded-full transition-all text-center">
+                    Nos marchés
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-charcu-wood/10 py-8 mt-4 text-center text-xs text-charcu-wood/60">
+        <p>© 2026 Ô Cochonneries Tarnaises - Charcuterie Artisanale. Tous droits réservés.</p>
+    </footer>
+
+<script>
+    const DATA_URL = "static/data/recettes.json";
+
+    const grid = document.getElementById("recipe-grid");
+    const filtersEl = document.getElementById("filters");
+    const counter = document.getElementById("result-count");
+
+    const FILTER_CLASSES = "filter-btn border border-charcu-wood/15 bg-white text-charcu-wood text-sm font-semibold px-5 py-2.5 rounded-full transition-colors hover:border-charcu-accent";
+
+    let categories = [];
+    let recipes = [];
+
+    // Échappe le texte venant du JSON avant de l'insérer dans le HTML
+    function esc(value) {
+        return String(value ?? "").replace(/[&<>"']/g, c => ({
+            "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+        }[c]));
+    }
+
+    function categoryLabel(id) {
+        const cat = categories.find(c => c.id === id);
+        return cat ? cat.label : id;
+    }
+
+    function recipeCard(r) {
+        const cuisson = r.cuisson ? "Cuisson " + esc(r.cuisson) : "Sans cuisson";
+        return `
+        <article id="${esc(r.id)}" data-cat="${esc(r.categorie)}" class="recipe-card group bg-charcu-surface border border-charcu-wood/5 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-500">
+            <div class="h-56 overflow-hidden bg-charcu-light">
+                <img src="${esc(r.image)}" alt="${esc(r.image_alt)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+            </div>
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="bg-charcu-cream text-charcu-wood text-xs font-bold px-3 py-1 rounded-full">${esc(categoryLabel(r.categorie))}</span>
+                    <span class="text-xs text-charcu-dark/60">⏱️ ${esc(r.temps_total)}</span>
+                </div>
+                <h2 class="font-serif text-2xl font-semibold text-charcu-wood">${esc(r.titre)}</h2>
+                <p class="text-sm text-charcu-dark/65 mt-3 leading-relaxed">${esc(r.description)}</p>
+                <p class="text-xs text-charcu-dark/60 mt-4">
+                    ${esc(r.produit_intro)} <a href="index.html#produits" class="text-charcu-accent font-semibold underline underline-offset-2">${esc(r.produit)}</a>
+                </p>
+
+                <details class="mt-5 pt-5 border-t border-charcu-wood/10">
+                    <summary class="flex items-center justify-between text-sm font-semibold text-charcu-wood hover:text-charcu-accent transition-colors">
+                        <span><span class="label-closed">Voir la recette</span><span class="label-open">Masquer la recette</span></span>
+                        <svg class="chev w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                    </summary>
+                    <div class="mt-5 space-y-5 text-sm text-charcu-dark/75 leading-relaxed">
+                        <p class="text-xs text-charcu-wood/70">Pour ${esc(r.portions)} · Préparation ${esc(r.preparation)} · ${cuisson}</p>
+                        <div>
+                            <h3 class="font-serif text-lg font-semibold text-charcu-wood mb-2">Ingrédients</h3>
+                            <ul class="list-disc pl-5 space-y-1">
+                                ${(r.ingredients || []).map(i => `<li>${esc(i)}</li>`).join("")}
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-lg font-semibold text-charcu-wood mb-2">Préparation</h3>
+                            <ol class="list-decimal pl-5 space-y-2">
+                                ${(r.etapes || []).map(e => `<li>${esc(e)}</li>`).join("")}
+                            </ol>
+                        </div>
+                        ${r.astuce ? `<p class="pt-4 border-t border-charcu-wood/5 text-xs text-charcu-accent font-semibold">💡 Astuce : ${esc(r.astuce)}</p>` : ""}
+                    </div>
+                </details>
+            </div>
+        </article>`;
+    }
+
+    function buildFilters() {
+        const all = [{ id: "all", pluriel: "Toutes" }, ...categories];
+        filtersEl.innerHTML = all.map(c =>
+            `<button type="button" class="${FILTER_CLASSES}" data-filter="${esc(c.id)}" aria-pressed="${c.id === "all"}">${esc(c.pluriel)}</button>`
+        ).join("");
+        filtersEl.querySelectorAll(".filter-btn").forEach(btn =>
+            btn.addEventListener("click", () => applyFilter(btn.dataset.filter))
+        );
+    }
+
+    function applyFilter(filter) {
+        let visible = 0;
+        grid.querySelectorAll(".recipe-card").forEach(card => {
+            const show = filter === "all" || card.dataset.cat === filter;
+            card.classList.toggle("hidden", !show);
+            if (show) visible++;
+        });
+        filtersEl.querySelectorAll(".filter-btn").forEach(btn =>
+            btn.setAttribute("aria-pressed", btn.dataset.filter === filter ? "true" : "false")
+        );
+        counter.textContent = visible + (visible > 1 ? " recettes" : " recette");
+    }
+
+    // Lien direct vers une recette (ex : recettes.html#croque-truffe) : on l'ouvre et on y défile
+    function openFromHash() {
+        const id = decodeURIComponent(location.hash.slice(1));
+        if (!id) return;
+        const target = document.getElementById(id);
+        if (target && target.matches(".recipe-card")) {
+            applyFilter("all");
+            const details = target.querySelector("details");
+            if (details) details.open = true;
+            target.scrollIntoView({ block: "start" });
+        }
+    }
+
+    function showError() {
+        grid.innerHTML = `
+            <div class="md:col-span-2 lg:col-span-3 bg-white border border-charcu-wood/10 rounded-3xl p-8 text-sm text-charcu-dark/75 leading-relaxed">
+                <p class="font-serif text-xl font-semibold text-charcu-wood mb-2">Les recettes ne se sont pas chargées.</p>
+                <p>Actualisez la page. Si le problème continue, appelez la boutique au 05 63 00 00 00.</p>
+            </div>`;
+        counter.textContent = "";
+    }
+
+    fetch(DATA_URL)
+        .then(res => {
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            return res.json();
+        })
+        .then(data => {
+            categories = data.categories || [];
+            recipes = data.recettes || [];
+            grid.innerHTML = recipes.map(recipeCard).join("");
+            buildFilters();
+            applyFilter("all");
+            openFromHash();
+        })
+        .catch(err => {
+            console.error("Impossible de charger " + DATA_URL, err);
+            showError();
+        });
+
+    window.addEventListener("hashchange", openFromHash);
+</script>
+</body>
+</html>

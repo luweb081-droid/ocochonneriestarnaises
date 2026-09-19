@@ -1,0 +1,179 @@
+{
+  "categories": [
+    { "id": "aperitif", "label": "Apéritif", "pluriel": "Apéritif" },
+    { "id": "entree", "label": "Entrée", "pluriel": "Entrées" },
+    { "id": "plat", "label": "Plat", "pluriel": "Plats" }
+  ],
+  "recettes": [
+    {
+      "id": "croque-truffe",
+      "categorie": "plat",
+      "titre": "Croque-monsieur truffé",
+      "description": "Une tranche épaisse de jambon blanc truffé, du comté affiné et une béchamel maison. Fondant à cœur, doré dessus.",
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=85&w=900&auto=format&fit=crop",
+      "image_alt": "Pain de mie doré pour croque-monsieur",
+      "temps_total": "25 min",
+      "produit_intro": "Avec notre",
+      "produit": "jambon blanc truffé",
+      "portions": "2 personnes",
+      "preparation": "15 min",
+      "cuisson": "10 min",
+      "ingredients": [
+        "4 tranches épaisses de pain de mie",
+        "2 tranches épaisses de jambon blanc truffé (environ 150 g)",
+        "100 g de comté râpé + 2 tranches pour le dessus",
+        "Béchamel : 20 g de beurre, 20 g de farine, 25 cl de lait, muscade"
+      ],
+      "etapes": [
+        "Faites fondre le beurre, ajoutez la farine et remuez 1 minute. Versez le lait peu à peu en fouettant, puis laissez épaissir 5 minutes. Ajoutez la muscade.",
+        "Préchauffez le four à 200 °C. Tartinez deux tranches de pain de béchamel, ajoutez le comté râpé, le jambon, puis refermez.",
+        "Nappez le dessus de béchamel et posez une tranche de comté.",
+        "Enfournez 10 minutes, jusqu'à ce que le dessus soit bien doré."
+      ],
+      "astuce": "Ajoutez une pointe de fleur de sel au moment de servir."
+    },
+    {
+      "id": "salade-paysanne",
+      "categorie": "entree",
+      "titre": "Salade tiède paysanne au pâté en croûte",
+      "description": "Des tranches de pâté en croûte poêlées sur une salade croquante, noix du Tarn et vinaigrette au miel.",
+      "image": "https://images.unsplash.com/photo-1547592180-85f173990554?q=85&w=900&auto=format&fit=crop",
+      "image_alt": "Préparation artisanale à base de pâté en croûte",
+      "temps_total": "15 min",
+      "produit_intro": "Avec notre",
+      "produit": "pâté en croûte tradition",
+      "portions": "4 personnes",
+      "preparation": "10 min",
+      "cuisson": "5 min",
+      "ingredients": [
+        "4 tranches épaisses de pâté en croûte (environ 100 g chacune)",
+        "200 g de salade (mesclun, frisée ou mâche)",
+        "8 cerneaux de noix",
+        "Vinaigrette : 3 c. à soupe d'huile, 1 c. à soupe de vinaigre de cidre, 1 c. à café de miel, 1 c. à café de moutarde"
+      ],
+      "etapes": [
+        "Mélangez les ingrédients de la vinaigrette dans un bol.",
+        "Poêlez les tranches de pâté 2 minutes de chaque côté à feu moyen, sans matière grasse, en les retournant délicatement.",
+        "Assaisonnez la salade, répartissez-la dans les assiettes avec les noix concassées.",
+        "Posez une tranche de pâté tiède sur chaque assiette et servez aussitôt."
+      ],
+      "astuce": "À déguster avec un vin rouge léger de Gaillac."
+    },
+    {
+      "id": "cake-saucisson",
+      "categorie": "aperitif",
+      "titre": "Cake salé au saucisson sec, olives et noix",
+      "description": "Un cake moelleux à couper en dés pour l'apéritif, ou en tranches avec une salade verte.",
+      "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=85&w=900&auto=format&fit=crop",
+      "image_alt": "Saucisson sec artisanal",
+      "temps_total": "55 min",
+      "produit_intro": "Avec notre",
+      "produit": "saucisson sec de Lacaune",
+      "portions": "6 à 8 personnes",
+      "preparation": "15 min",
+      "cuisson": "40 min",
+      "ingredients": [
+        "200 g de farine et 1 sachet de levure chimique",
+        "4 œufs",
+        "10 cl d'huile d'olive et 10 cl de lait",
+        "100 g de saucisson sec de Lacaune, sans la peau, coupé en dés",
+        "100 g de gruyère râpé",
+        "80 g d'olives dénoyautées et 50 g de noix concassées",
+        "Poivre du moulin (pas besoin de sel)"
+      ],
+      "etapes": [
+        "Préchauffez le four à 180 °C et huilez un moule à cake.",
+        "Mélangez la farine et la levure, ajoutez les œufs un à un, puis l'huile et le lait.",
+        "Incorporez le saucisson, le gruyère, les olives et les noix, puis poivrez.",
+        "Versez dans le moule et enfournez 40 à 45 minutes. La lame d'un couteau doit ressortir sèche.",
+        "Laissez tiédir 10 minutes avant de démouler."
+      ],
+      "astuce": "Il se prépare la veille et se réchauffe 5 minutes au four."
+    },
+    {
+      "id": "veloute-potimarron",
+      "categorie": "entree",
+      "titre": "Velouté de potimarron, éclats de saucisson",
+      "description": "Un velouté doux pour les soirées d'automne, relevé par des éclats de saucisson croustillants.",
+      "image": "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=85&w=900&auto=format&fit=crop",
+      "image_alt": "Préparation culinaire maison",
+      "temps_total": "40 min",
+      "produit_intro": "Avec notre",
+      "produit": "saucisson sec de Lacaune",
+      "portions": "4 personnes",
+      "preparation": "15 min",
+      "cuisson": "25 min",
+      "ingredients": [
+        "800 g de potimarron (la peau se mange)",
+        "1 oignon",
+        "1 litre de bouillon de volaille ou de légumes",
+        "10 cl de crème liquide",
+        "60 g de saucisson sec de Lacaune, sans la peau",
+        "1 c. à soupe d'huile d'olive, poivre"
+      ],
+      "etapes": [
+        "Coupez le potimarron en cubes et émincez l'oignon.",
+        "Faites revenir l'oignon dans l'huile 3 minutes, ajoutez le potimarron et le bouillon. Laissez cuire 20 minutes à frémissement.",
+        "Mixez avec la crème, poivrez et rectifiez la texture avec un peu de bouillon si besoin.",
+        "Coupez le saucisson en petits dés et faites-les griller 2 minutes à sec dans une poêle.",
+        "Servez le velouté bien chaud, parsemé d'éclats de saucisson."
+      ],
+      "astuce": "Quelques noisettes torréfiées ajoutent du croquant."
+    },
+    {
+      "id": "endives-jambon",
+      "categorie": "plat",
+      "titre": "Endives au jambon truffé gratinées",
+      "description": "Le classique du dimanche soir, avec un jambon truffé qui parfume toute la béchamel.",
+      "image": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=85&w=900&auto=format&fit=crop",
+      "image_alt": "Plat gratiné de cuisine artisanale",
+      "temps_total": "55 min",
+      "produit_intro": "Avec notre",
+      "produit": "jambon blanc truffé",
+      "portions": "4 personnes",
+      "preparation": "15 min",
+      "cuisson": "40 min",
+      "ingredients": [
+        "4 belles endives",
+        "4 tranches de jambon blanc truffé",
+        "80 g de comté râpé",
+        "Béchamel : 40 g de beurre, 40 g de farine, 50 cl de lait, muscade"
+      ],
+      "etapes": [
+        "Cuisez les endives 20 minutes à la vapeur ou dans l'eau bouillante salée, puis égouttez-les bien.",
+        "Préparez la béchamel : faites fondre le beurre, ajoutez la farine, puis le lait peu à peu. Laissez épaissir et ajoutez la muscade.",
+        "Préchauffez le four à 200 °C. Enroulez chaque endive dans une tranche de jambon et rangez-les dans un plat.",
+        "Nappez de béchamel, parsemez de comté et enfournez 20 minutes, jusqu'à ce que le gratin soit doré."
+      ],
+      "astuce": "Pressez les endives cuites entre les mains pour éviter un gratin trop liquide."
+    },
+    {
+      "id": "planche-tarnaise",
+      "categorie": "aperitif",
+      "titre": "La planche tarnaise",
+      "description": "Nos trois spécialités réunies sur une planche, avec de quoi les accompagner. Rien à cuire, tout à partager.",
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?q=85&w=900&auto=format&fit=crop",
+      "image_alt": "Planche de charcuterie artisanale",
+      "temps_total": "10 min",
+      "produit_intro": "Avec",
+      "produit": "nos trois spécialités",
+      "portions": "6 personnes",
+      "preparation": "10 min",
+      "cuisson": null,
+      "ingredients": [
+        "200 g de saucisson sec de Lacaune",
+        "150 g de pâté en croûte tradition",
+        "150 g de jambon blanc truffé",
+        "Cornichons, pain de campagne, quelques figues fraîches",
+        "Un fromage de caractère (facultatif)"
+      ],
+      "etapes": [
+        "Sortez les charcuteries du réfrigérateur 30 minutes avant de servir : elles révèlent mieux leurs arômes.",
+        "Coupez le saucisson en rondelles fines et le pâté en croûte en tranches épaisses.",
+        "Roulez ou pliez les tranches de jambon.",
+        "Disposez le tout sur une planche, ajoutez cornichons, figues et pain tranché."
+      ],
+      "astuce": "On peut composer votre planche sur mesure au comptoir de la boutique."
+    }
+  ]
+}
