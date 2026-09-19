@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="static/js/layout.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -49,26 +50,7 @@
     }
 </style>
 
-    <header class="fixed top-4 left-0 right-0 z-50 px-4">
-        <nav class="mx-auto max-w-6xl bg-white/85 backdrop-blur-xl border border-charcu-wood/10 shadow-[0_10px_40px_rgba(42,26,23,0.08)] rounded-full px-5 md:px-7 py-3 flex items-center justify-between">
-            <a href="index.html#accueil" class="font-serif text-lg md:text-xl font-semibold tracking-tight text-charcu-wood flex items-center gap-2">
-                Ô Cochonneries Tarnaises
-            </a>
-
-            <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-charcu-wood/70">
-                <a href="index.html#accueil" class="hover:text-charcu-accent transition-colors">Accueil</a>
-                <a href="origine.html" aria-current="page" class="text-charcu-accent font-semibold">Origine</a>
-                <a href="index.html#produits" class="hover:text-charcu-accent transition-colors">Spécialités</a>
-                <a href="recettes.html" class="hover:text-charcu-accent transition-colors">Recettes</a>
-                <a href="index.html#marches" class="hover:text-charcu-accent transition-colors">Nos marchés</a>
-                <a href="index.html#contact" class="hover:text-charcu-accent transition-colors">Contact</a>
-            </div>
-
-            <a href="index.html#contact" class="bg-charcu-wood hover:bg-charcu-accent text-white text-xs md:text-sm font-semibold px-4 md:px-5 py-2.5 rounded-full transition-all shadow-sm">
-                Commander
-            </a>
-        </nav>
-    </header>
+    <site-header></site-header>
 
     <main class="w-full flex-grow pt-24 pb-20 flex flex-col gap-20 md:gap-24">
 
@@ -260,9 +242,7 @@
 
     </main>
 
-    <footer class="border-t border-charcu-wood/10 py-8 mt-4 text-center text-xs text-charcu-wood/60">
-        <p>© 2026 Ô Cochonneries Tarnaises - Charcuterie Artisanale. Tous droits réservés.</p>
-    </footer>
+    <site-footer></site-footer>
 
 </body>
 </html>
